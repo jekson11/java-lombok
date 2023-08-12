@@ -8,7 +8,6 @@ public class DataTest {
     private static final Logger log = LoggerFactory.getLogger(DataTest.class);
     @Test
     void testProductData(){
-        //penjelasanny di class Product
         Product product = new Product("001","Keyboard", 500000L);
 
         log.info("{}",product.getId());
