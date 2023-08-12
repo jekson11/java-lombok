@@ -10,9 +10,7 @@ public class WithTest {
     Logger log = LoggerFactory.getLogger(WithTest.class);
     @Test
     void testRegisterWithOutWithBook(){
-        //biasanya kan jika kita ingin membuat object yang berbeda kita membuat nya seperti ini
-        //padahal kita hanya ingin username nya saja yang berbeda atau passwornya saja yang berbeda
-        //dengan kita menggunakan With maka tidak perllu seperti ini
+    
         Register register = new Register("jekson", "tambunan");
         log.info("{}", register);
 
@@ -25,16 +23,13 @@ public class WithTest {
 
     @Test
     void tesRegisterWithBook(){
-        //lihat penjelasan tentang With nya di class Register
-        //ini jika kita menggunaka With annotation
+    
         Register register = new Register("Jekson", "Tambunan");
         log.info("{}", register);
 
-        //ini usernamenya sama tapi passwornya beda
         Register register1 = register.withPassword("Rahasia");
         log.info("{}", register1);
 
-        //ini usernamenya beda tapi passwornya sama
         Register register2 = register.withUsername("jekson11");
         log.info("{}", register2);
 
