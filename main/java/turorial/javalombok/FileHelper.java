@@ -12,9 +12,7 @@ import java.util.Scanner;
 public class FileHelper {
 
     public static String loadFile(String file) throws IOException {
-        //jika kita ingin membaca file kan biasanya kita buat seperti ini menggunakan try
-        //untuk menutup FileReader Scanner dll yang bisa ditutup
-        //nah kalau kita mengguankan cleanup annotaion kita tidak perlu menggunakan ini
+
         FileReader reader = null;
         try {
             reader = new FileReader(file);
@@ -34,10 +32,8 @@ public class FileHelper {
         return file;
     }
 
-    @SneakyThrows //dengan kita menambahkan ini maka kita tidak perlu lagi throws exception seperti ini throws IOException opada method kita
-    //coba hapus SneakyThrowsnya pasti akan di suruh membuat throws exception penjelasan sneaky lebih lanjut baca aja di file
+    @SneakyThrows 
     public static String loadFileXml(String file)  {
-        //dengan menggunakan annotation cleanup kita tidak perlu menggunakan try catch lagi untuk menutup file atau secenner dll yang bisa di tutup
         @Cleanup FileReader reader = new FileReader(file);
         @Cleanup Scanner scanner = new Scanner(reader);
 
