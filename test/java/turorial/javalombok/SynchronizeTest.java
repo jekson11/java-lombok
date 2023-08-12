@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 public class SynchronizeTest {
     @Test
     void testCounterSynchronize() throws InterruptedException {
-        //ini jika tidak menggunakan annotation @Synchronize kode nya tidak akan thread safe
-        //hasil nya tidak sesuai yang kita inginkan
+    
         for (int i = 0; i < 10; i++) {
             new Thread(() -> {
                 for (int j = 0; j < 100; j++) {
