@@ -11,7 +11,6 @@ public class Vehicle {
     private String name;
     private Long price;
     private String brand;
-    //tinggal tambahkan annotaion singular pada data container atau List Set, Map dll
-    @Singular //Singular nya akan error jika namanya tidak merepresentasikan lebih dari satu
+    @Singular
     private List<String> colors;
 }
